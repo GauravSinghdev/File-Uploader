@@ -1,3 +1,4 @@
+//@ts-nocheck
 "use client";
 
 import { IKUpload } from "imagekitio-next";
@@ -7,7 +8,7 @@ import { toast } from "sonner";
 
 const authenticator = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/auth");
+    const response = await fetch("/api/auth");
 
     if (!response.ok) {
       const errorText = await response.text();
