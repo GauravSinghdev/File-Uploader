@@ -17,7 +17,7 @@ const authenticator = async () => {
     }
 
     const data = await response.json();
-    const { signature, expire, token } = data;
+    const { signature, expire, token } = data; 
     return { signature, expire, token };
   } catch (error: unknown) {
     if (error instanceof Error) {
