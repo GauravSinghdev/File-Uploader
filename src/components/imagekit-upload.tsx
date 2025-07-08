@@ -1,4 +1,3 @@
-//@ts-nocheck
 "use client";
 
 import { IKUpload } from "imagekitio-next";
@@ -26,7 +25,7 @@ const authenticator = async () => {
 };
 
 export default function ImageKitUpload() {
-  const ikUploadRef = useRef<any>(null);
+  const ikUploadRef = useRef<HTMLInputElement | null>(null);
   const [progressBar, setProgressBar] = useState<number>(0);
   // const [fileLink, setFileLink] = useState<string>("");
   return (
@@ -69,7 +68,7 @@ export default function ImageKitUpload() {
       />
       <Button
         onClick={() => {
-          ikUploadRef.current.click();
+          ikUploadRef.current?.click();
         }}
         variant={"outline"}
         className="rounded mt-2 w-fit cursor-pointer shadow-xl"
