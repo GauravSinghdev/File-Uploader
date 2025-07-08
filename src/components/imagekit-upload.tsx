@@ -19,8 +19,12 @@ const authenticator = async () => {
     const data = await response.json();
     const { signature, expire, token } = data;
     return { signature, expire, token };
-  } catch (error: any) {
-    throw new Error(`Authentication request failed: ${error.message}`);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      throw new Error(`Authentication request failed: ${error.message}`);
+    } else {
+      throw new Error("Authentication request failed: Unknown error");
+    }
   }
 };
 
