@@ -4,7 +4,6 @@ import { IKUpload } from "imagekitio-next";
 import { Button } from "./ui/button";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
-import Link from "next/link";
 
 const authenticator = async () => {
   try {
